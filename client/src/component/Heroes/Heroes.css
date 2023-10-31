@@ -1,0 +1,188 @@
+.container-Heroes,
+.container-Heroes::before,
+.container-Heroes::after {
+position: relative;
+min-height: 100%;
+min-width: 100%;
+}
+
+.container-Heroes::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 0;
+}
+
+.container-Heroes::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url("./image/fon.png");
+background-size: cover;
+z-index: -1;
+}
+
+.image-techguy,
+.image-humanitarian {
+  position: absolute;
+  bottom: 46.5%;
+  transform: translateX(10%) translateY(-21%);
+  width: 83%;
+  height: 125%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  z-index: 1;
+}
+
+.image-techguy {
+background-image: url("./image/techguy.png");
+}
+
+.image-humanitarian {
+background-image: url("./image/humanitarian.png"); 
+}
+
+.image-PowerEngineer {
+position: fixed;
+bottom: 0;
+left: 35%;
+transform: translateX(15%) translateY(10%);
+width: 28vw;
+height: 39vh;
+background-image: url("./image/PowerEngineer.png");
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat; 
+z-index: 1;
+}
+
+.image-Sportik {
+  position: absolute;
+  bottom: 37%;
+  transform: translateX(10%) translateY(-21%);
+  width: 83%;
+  height: 125%;
+  background-image: url("./image/Sportik.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  z-index: 1;
+}
+
+.button-S,
+.button-H,
+.button-T {
+width: 14vw;
+height: 7vh;
+padding: 10px 20px;
+color: #000;
+font-family: Playfair Display;
+font-size: 1.5vw;
+font-style: normal;
+font-weight: 800;
+line-height: 87px;
+border: none;
+border-radius: 25px;
+border: 0.6px solid black;
+background: #D9D9D9;
+align-items: center;
+display: flex;
+justify-content: center;
+text-align: center;
+position: fixed;
+bottom: 21.8%;
+left: 48.5%;
+transform: translateX(-50%);
+}
+
+.button-S .bracket,
+.button-H .bracket,
+.button-T .bracket {
+font-weight: 100;
+}
+
+.text-Sportik,
+.text-humanitarian,
+.text-techguy {
+font-family: Playfair Display;
+display: flex;
+width: 18.1vw;
+height: 29.3vh;
+align-items: center;
+font-size: 1.6vw;
+color: white;
+position: fixed;
+left: 50%;
+transform: translateX(-50%);
+z-index: 1;
+border: none;
+}
+.text-Sportik{
+  bottom: 33%;
+
+}
+.text-humanitarian,
+.text-techguy{
+bottom: 23%;
+}
+
+
+
+.panel {
+position: fixed;
+bottom: 0;
+left: 18%;
+transform: translateX(-50%);
+width: 21.1vw;
+height: 42.6vh;
+background: linear-gradient(180deg, #7E7A7A 10%, rgba(126, 122, 122, 0.00) 100%);
+}
+
+.arrow-1,
+.arrow-2,
+.arrow-3 {
+position: absolute;
+width: 15%;
+height: 37%;
+background-size: cover;
+z-index: 1;
+}
+
+.arrow-1 {
+bottom: 86%;
+left: 1.8%;
+width: 5%;
+height: 11%;
+background-image: url("./image/arrow.png");
+background-color: transparent;
+border: none;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat; 
+}
+
+.arrow-2 {
+bottom: 50%;
+right: -7%;
+background-image: url("./image/arrow-2.png");
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat; 
+}
+
+.arrow-3 {
+bottom: 50%;
+left: -10%;
+background-image: url("./image/arrow-2.2.png");
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat; 
+} 

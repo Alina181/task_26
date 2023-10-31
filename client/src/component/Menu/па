@@ -1,0 +1,636 @@
+//кнопка
+// import React, { useState } from "react";
+// import "./Heroes.css";
+
+// const Heroes: React.FC = () => {
+//   const [image, setImage] = useState("image-Sportik");
+//   const [text, setText] = useState("text-Sportik");
+//   const [button, setButton] = useState("button-S");
+
+//   const [showArrow3, setShowArrow3] = useState(false);
+//   const [showArrow2, setShowArrow2] = useState(true); // Устанавливаем значение по умолчанию в true
+
+//   const handleArrow2Click = () => {
+//     if (image === "image-Sportik") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow3(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow2(false);
+//     } else if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     }
+//   };
+  
+//   const handleArrow3Click = () => {
+//     if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-Sportik");
+//       setText("text-Sportik");
+//       setButton("button-S");
+//       setShowArrow3(false);
+//     } else if (image === "image-Sportik") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow3(true);
+//     }
+//   };
+  
+//   return (
+//     <div className="container-Heroes">
+//       <div className="image-PowerEngineer">
+//         {showArrow2 && ( 
+//           <div className="arrow-2" onClick={handleArrow2Click}></div>
+//         )}
+//         <div className="arrow-1"></div>
+//         {showArrow3 && (
+//           <div className="arrow-3" onClick={handleArrow3Click}></div>
+//         )}
+//         {button === "button-S" && (
+//         <button className="button-S">
+//           <span className="bracket">&lt;</span>Спортник
+//           <span className="bracket">&gt;</span>
+//         </button>
+//         )}
+//         {button === "button-H" && (
+//         <button className="button-H">
+//           <span className="bracket">&lt;</span>Гуманитарий
+//           <span className="bracket">&gt;</span>
+//         </button>
+//         )}
+//         {button === "button-T" && (
+//         <button className="button-T">
+//           <span className="bracket">&lt;</span>Технарь
+//           <span className="bracket">&gt;</span>
+//         </button>
+//         )}
+//         <div className={image}></div>
+//       </div>
+//       <div className="panel">
+//         {text === "text-Sportik" && (
+//           <div className="text-Sportik">
+//             “Спортник” - имеет повышенное здоровье в 150 единиц, увеличенный вдвое
+//             урон по паре “Физра” и любое улучшение от предметов увеличивается в
+//             1.25 раза.
+//           </div>
+//         )}
+//         {text === "text-humanitarian" && (
+//           <div className="text-humanitarian">
+//             “Гуманитарий” - имеет обычное здоровье в 100 единиц, увеличенный вдвое
+//             урон по парам “Русский язык”, “Английский язык”. Предметы типа “Книга”
+//             улучшают характеристики в 1.5 раза сильнее.
+//           </div>
+//         )}
+//         {text === "text-techguy" && (
+//           <div className="text-techguy">
+//             “Технарь”- имеет обычное здоровье в 100 единиц, увеличенный вдвое урон по парам “Математика” и “Программирование”. Предметы типа “Гаджет” улучшают характеристики в 1.5 раза сильнее.
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Heroes;
+
+
+
+
+
+//Для клавиатуры
+
+// import React, { useState, useEffect } from "react";
+// import "./Heroes.css";
+
+// const Heroes: React.FC = () => {
+//   const [image, setImage] = useState("image-Sportik");
+//   const [text, setText] = useState("text-Sportik");
+//   const [button, setButton] = useState("button-S");
+
+//   const [showArrow3, setShowArrow3] = useState(false);
+//   const [showArrow2, setShowArrow2] = useState(true); // Устанавливаем значение по умолчанию в true
+
+//   const handleArrow2Click = () => {
+//     if (image === "image-Sportik") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow3(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow2(false);
+//     } else if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     }
+//   };
+
+//   const handleArrow3Click = () => {
+//     if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-Sportik");
+//       setText("text-Sportik");
+//       setButton("button-S");
+//       setShowArrow3(false);
+//     } else if (image === "image-Sportik") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow3(true);
+//     }
+//   };
+
+//   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+//     if (event.key === "ArrowLeft") {
+//       handleArrow2Click();
+//     } else if (event.key === "ArrowRight") {
+//       handleArrow3Click();
+//     }
+//     else if (event.key === "ArrowLeft") {
+//       handleArrow2Click();
+//     } else if (event.key === "ArrowRight") {
+//       handleArrow3Click();
+//     }
+//   };
+  
+//   useEffect(() => {
+//     window.addEventListener("keydown", handleKeyDown);
+//     return () => {
+//       window.removeEventListener("keydown", handleKeyDown);
+//     };
+//   }, []);
+
+//   return (
+//     <div className="container-Heroes">
+//       <div className="image-PowerEngineer">
+//         {showArrow2 && <div className="arrow-2" onClick={handleArrow2Click}></div>}
+//         <div className="arrow-1"></div>
+//         {showArrow3 && <div className="arrow-3" onClick={handleArrow3Click}></div>}
+//         {button === "button-S" && (
+//           <button className="button-S">
+//             <span className="bracket">&lt;</span>Спортник
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+//         {button === "button-H" && (
+//           <button className="button-H">
+//             <span className="bracket">&lt;</span>Гуманитарий
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+//         {button === "button-T" && (
+//           <button className="button-T">
+//             <span className="bracket">&lt;</span>Технарь
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+//         <div className={image}></div>
+//       </div>
+      
+//       <div className="panel">
+//         {text === "text-Sportik" && (
+//           <div className="text-Sportik">
+//             “Спортник” - имеет повышенное здоровье в 150 единиц, увеличенный вдвое
+//             урон по паре “Физра” и любое улучшение от предметов увеличивается в
+//             1.25 раза.
+//           </div>
+//         )}
+//         {text === "text-humanitarian" && (
+//           <div className="text-humanitarian">
+//             “Гуманитарий” - имеет обычное здоровье в 100 единиц, увеличенный вдвое
+//             урон по парам “Русский язык”, “Английский язык”. Предметы типа “Книга”
+//             улучшают характеристики в 1.5 раза сильнее.
+//           </div>
+//         )}
+//         {text === "text-techguy" && (
+//           <div className="text-techguy">
+//             “Технарь”- имеет обычное здоровье в 100 единиц, увеличенный вдвое урон по парам “Математика” и “Программирование”. Предметы типа “Гаджет” улучшают характеристики в 1.5 раза сильнее.
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Heroes;
+
+
+
+
+
+
+//Код для клавиатуры 
+// import React, { useState, useRef, useEffect } from "react";
+// import "./Heroes.css";
+
+// const Heroes: React.FC = () => {
+//   const [image, setImage] = useState(["image-Sportik", "image-humanitarian", "image-techguy"]);
+//   const [text, setText] = useState(["text-Sportik", "text-humanitarian", "text-techguy"]);
+//   const [button, setButton] = useState(["button-S", "button-H", "button-T"]);
+//   const [showArrow3, setShowArrow3] = useState(false);
+//   const [showArrow2, setShowArrow2] = useState(true);
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   const handleArrow2Click = () => {
+//     if (currentIndex === 0) {
+//       setCurrentIndex(1);
+//       setShowArrow3(true);
+//     } else if (currentIndex === 1) {
+//       setCurrentIndex(2);
+//       setShowArrow2(false);
+//     } else if (currentIndex === 2) {
+//       setCurrentIndex(1);
+//       setShowArrow2(true);
+//     }
+//   };
+
+//   const handleArrow3Click = () => {
+//     if (currentIndex === 2) {
+//       setCurrentIndex(1);
+//       setShowArrow2(true);
+//     } else if (currentIndex === 1) {
+//       setCurrentIndex(0);
+//       setShowArrow3(false);
+//     } else if (currentIndex === 0) {
+//       setCurrentIndex(2);
+//       setShowArrow3(true);
+//     }
+//   };
+
+//   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, callback: () => void) => {
+//     if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+//       callback();
+//     }
+//   };
+
+//   const arrow2Ref = useRef<HTMLDivElement>(null);
+//   const arrow3Ref = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     arrow2Ref.current?.focus();
+//     arrow3Ref.current?.focus();
+//   }, []);
+
+//   return (
+//     <div className="container-Heroes">
+//       <div className="image-PowerEngineer">
+//         {showArrow2 && (
+//           <div
+//             ref={arrow2Ref}
+//             className="arrow-2"
+//             onClick={handleArrow2Click}
+//             onKeyDown={(e) => handleKeyDown(e, handleArrow2Click)}
+//             tabIndex={0} // Добавляем атрибут tabIndex для того, чтобы элемент был фокусируемым
+//           ></div>
+//         )}
+//         <div className="arrow-1"></div>
+//         {showArrow3 && (
+//           <div
+//             ref={arrow3Ref}
+//             className="arrow-3"
+//             onClick={handleArrow3Click}
+//             onKeyDown={(e) => handleKeyDown(e, handleArrow3Click)}
+//             tabIndex={0} // Добавляем атрибут tabIndex для того, чтобы элемент был фокусируемым
+//           ></div>
+//         )}
+//         {button[currentIndex] === "button-S" && (
+//           <button className="button-S">
+//             <span className="bracket">&lt;</span>Спортник
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+//         {button[currentIndex] === "button-H" && (
+//           <button className="button-H">
+//             <span className="bracket">&lt;</span>Гуманитарий
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+//         {button[currentIndex] === "button-T" && (
+//           <button className="button-T">
+//             <span className="bracket">&lt;</span>Технарь
+//             <span className="bracket">&gt;</span>
+//           </button>
+//         )}
+
+//         <div className={image[currentIndex]}></div>
+//       </div>
+//       <div className="panel">
+//         {text[currentIndex] && <div className={text[currentIndex]}></div>}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Heroes;
+
+
+
+//клава
+
+// import React, { useState, useRef, useEffect } from "react";
+// import "./Heroes.css";
+
+// const Heroes: React.FC = () => {
+//   const [image, setImage] = useState("image-Sportik");
+//   const [text, setText] = useState("text-Sportik");
+//   const [button, setButton] = useState("button-S");
+
+//   const [showArrow1, setShowArrow1] = useState(false);
+//   const [showArrow2, setShowArrow2] = useState(true);
+//   const [showArrow3, setShowArrow3] = useState(false);
+
+//   const handleArrow1Click = () => {
+//     if (image === "image-humanitarian") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow1(false);
+//       setShowArrow3(true);
+//     } else if (image === "image-techguy") {
+//       setImage("image-Sportik");
+//       setText("text-Sportik");
+//       setButton("button-S");
+//       setShowArrow1(true);
+//       setShowArrow2(true);
+//     }
+//   };
+
+//   const handleArrow2Click = () => {
+//     if (image === "image-Sportik") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow3(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow2(false);
+//     } else if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     }
+//   };
+
+//   const handleArrow3Click = () => {
+//     if (image === "image-techguy") {
+//       setImage("image-humanitarian");
+//       setText("text-humanitarian");
+//       setButton("button-H");
+//       setShowArrow2(true);
+//     } else if (image === "image-humanitarian") {
+//       setImage("image-Sportik");
+//       setText("text-Sportik");
+//       setButton("button-S");
+//       setShowArrow3(false);
+//     } else if (image === "image-Sportik") {
+//       setImage("image-techguy");
+//       setText("text-techguy");
+//       setButton("button-T");
+//       setShowArrow3(true);
+//     }
+//   };
+
+//   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, callback: () => void) => {
+//     if (event.key === "ArrowRight") {
+//       callback();
+//     } else if (event.key === "ArrowLeft" && showArrow1) {
+//       handleArrow1Click();
+//     }
+//   };
+
+//   const arrow1Ref = useRef<HTMLDivElement>(null);
+//   const arrow2Ref = useRef<HTMLDivElement>(null);
+//   const arrow3Ref = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     arrow1Ref.current?.focus();
+//     arrow3Ref.current?.focus();
+//   }, []);
+
+//   return (
+//         <div className="container-Heroes">
+//           <div className="image-PowerEngineer">
+//             {showArrow2 && <div className="arrow-2" onClick={handleArrow2Click}></div>}
+//             <div className="arrow-1"></div>
+//             {showArrow3 && <div className="arrow-3" onClick={handleArrow3Click}></div>}
+//             {button === "button-S" && (
+//               <button className="button-S">
+//                 <span className="bracket">&lt;</span>Спортник
+//                 <span className="bracket">&gt;</span>
+//               </button>
+//             )}
+//             {button === "button-H" && (
+//               <button className="button-H">
+//                 <span className="bracket">&lt;</span>Гуманитарий
+//                 <span className="bracket">&gt;</span>
+//               </button>
+//             )}
+//             {button === "button-T" && (
+//               <button className="button-T">
+//                 <span className="bracket">&lt;</span>Технарь
+//                 <span className="bracket">&gt;</span>
+//               </button>
+//             )}
+//             <div className={image}></div>
+//           </div>
+          
+//           <div className="panel">
+//             {text === "text-Sportik" && (
+//               <div className="text-Sportik">
+//                 “Спортник” - имеет повышенное здоровье в 150 единиц, увеличенный вдвое
+//                 урон по паре “Физра” и любое улучшение от предметов увеличивается в
+//                 1.25 раза.
+//               </div>
+//             )}
+//             {text === "text-humanitarian" && (
+//               <div className="text-humanitarian">
+//                 “Гуманитарий” - имеет обычное здоровье в 100 единиц, увеличенный вдвое
+//                 урон по парам “Русский язык”, “Английский язык”. Предметы типа “Книга”
+//                 улучшают характеристики в 1.5 раза сильнее.
+//               </div>
+//             )}
+//             {text === "text-techguy" && (
+//               <div className="text-techguy">
+//                 “Технарь”- имеет обычное здоровье в 100 единиц, увеличенный вдвое урон по парам “Математика” и “Программирование”. Предметы типа “Гаджет” улучшают характеристики в 1.5 раза сильнее.
+//               </div>
+//             )}
+//           </div>
+//         </div>
+//       );
+//     };
+    
+//     export default Heroes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainMenu {
+  background-image: url("./image/fon.png");
+  min-height: 100vh;
+  min-width: 100vw;
+  /* width: 100vw;
+  height: 100vh;*/
+  background-size: 100% 100%; 
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  }
+  .photo-button {
+  width: 12vw;
+  padding-left: 25px;
+  padding-top: 25px;
+  }
+  .buttons-container {
+  font-size: 2vw;
+  position: absolute;
+  left: 5vw;
+  top: 40vh;
+  height: 25vh;
+  width: 30vw;
+  color: #fff;
+  font-family: Playfair Display;
+  text-shadow: 1.8px 1.5px 0 rgb(0, 0, 0), -1.8px -1.8px 0 rgb(0, 0, 0), 1.8px -1.8px 0 rgb(0, 0, 0),
+  -1.8px 1.8px 0 rgb(0, 0, 0);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  }
+  .button1 {
+  background-image: url("./image/romb.png");
+  background-size: 1.4vw;
+  padding-left: 3vw;
+  background-position: 1vw;
+  background-repeat: no-repeat;
+  font-size: 5vw;
+  transition: 1s;
+  }
+  .button1:hover {
+  font-size: 5.6vw;
+  color: #01ffff;
+  }
+  .button2,
+  .button3 {
+  padding-top: 0.7vh;
+  background-image: url("./image/romb.png");
+  background-size: 1.4vw;
+  padding-left: 3vw;
+  background-position: 1vw;
+  background-repeat: no-repeat;
+  font-size: 4vw;
+  transition: 1s;
+  }
+  .button2:hover,
+  .button3:hover {
+  font-size: 4.5vw;
+  color: #01ffff;
+  }
+  .profile-panel {
+  background: rgba(4, 4, 4, 0.69);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 15vw;
+  padding-right: 0px;
+  margin-right: 0px;
+  }
+  .user-profile {
+  height: 7vh;
+  }
+  .hr-user-profile1,
+  .hr-user-profile2 {
+  margin-left: 0px;
+  margin-right: 0px;
+  height: 3px;
+  color: white;
+  background: #f9ebeb;
+  padding-right: 0px;
+  }
+  .hr-user-profile2 {
+  position: absolute;
+  bottom: 4vh;
+  width: 99%;
+  }
+  .text-button {
+  color: #fff;
+  font-family: Playfair Display;
+  font-size: 2vw;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  padding-top: 0;
+  }
+  
+  .new-profile-button {
+  background-image: url("./image/friend.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 3vh;
+  width: 3vw;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  transition: 1s;
+  }
+  .new-profile-button:hover {
+  background-image: url("./image/friend2.png");
+  height: 4vh;
+  } 
+  .button-account {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0vh;
+  left: 0;
+  color: #fff;
+  height: 6vh;
+  width: 15vw;
+  font-family: Playfair Display;
+  font-size: 1.3vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 0px;
+  }
